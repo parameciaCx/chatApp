@@ -5,7 +5,7 @@ const cont = document.getElementById('msgContainer');
 const inp = document.getElementById('msgInput');
 
 const userName = prompt('Enter display name: ');
-appendMsg('Connected to chatroom.');
+selfMsg('Connected to chatroom.');
 socket.emit('new-user', userName);
 
 socket.on('append-message', (data) => {
@@ -18,13 +18,20 @@ socket.on('user-joined', (user) => {
 
 cont.addEventListener('submit', (e) => {
 	e.preventDefault();
-	appendMsg(`${userName}: ${inp.value}`);
+	selfMsg(`${inp.value}`);
 	socket.emit('send-message', inp.value);
 	inp.value = '';
 });
 
 function appendMsg(message) {
 	const msg = document.createElement('div');
+	msg.innerText = message;
+	display.append(msg);
+}
+
+function selfMsg(message) {
+	const msg = document.createElement('div');
+	msg.style.cssText = 'display: flex; justify-content: flex-end;background-color:aquamarine';
 	msg.innerText = message;
 	display.append(msg);
 }

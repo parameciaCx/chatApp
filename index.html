@@ -10,11 +10,17 @@
     <script defer src="http://localhost:3231/socket.io/socket.io.js"></script>
     <script defer src="App.js"></script>
   </head>
+  <style>
+  #msgContainer{
+      display:flex;
+        justify-content: center;
+  }
+  </style>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
 
-    <form id="msgContainer">
+  <form id="msgContainer">
     <input id="msgInput" type="text">
     <button id="sendMsg" type="submit">Send</button>
 
