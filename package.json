@@ -1,0 +1,17 @@
+{
+	"name": "chatApp",
+	"version": "1.0.0",
+	"main": "index.js",
+	"repository": "https://github.com/parameciaCx/chatApp.git",
+	"scripts": {
+		"server": "nodemon server.js"
+	},
+	"author": "Zizhou Zhang <strawhatj@gmail.com>",
+	"license": "MIT",
+	"dependencies": {
+		"socket.io": "^2.2.0"
+	},
+	"devDependencies": {
+		"nodemon": "^1.19.1"
+	}
+}
